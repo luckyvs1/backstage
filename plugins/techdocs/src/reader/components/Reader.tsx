@@ -27,6 +27,7 @@ import transformer, {
   addLinkClickListener,
   removeMkdocsHeader,
   modifyCss,
+  onCssReady,
 } from '../transformers';
 import { docStorageURL } from '../../config';
 import URLFormatter from '../urlFormatter';
@@ -117,6 +118,15 @@ export const Reader = () => {
               divElement.shadowRoot
                 ?.querySelector(parsedUrl.hash)
                 ?.scrollIntoView();
+            },
+          }),
+          onCssReady({
+            docStorageURL,
+            onLoad: dom => {
+              dom.style.setProperty('opacity', '0');
+            },
+            onReady: dom => {
+              dom.style.removeProperty('opacity');
             },
           }),
         ]);
