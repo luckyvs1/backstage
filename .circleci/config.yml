@@ -30,5 +30,4 @@ workflows:
   test-application:
     jobs:
       - install-node
-    jobs:
       - test
