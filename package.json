@@ -12,7 +12,6 @@
     "clean": "backstage-cli clean && lerna run clean",
     "diff": "lerna run diff --",
     "test": "lerna run test --since origin/master -- --coverage",
-    "test:ci": "lerna run test --",
     "test:all": "lerna run test -- --coverage",
     "lint": "lerna run lint --since origin/master --",
     "lint:all": "lerna run lint --",
