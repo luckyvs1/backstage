@@ -31,3 +31,5 @@ workflows:
     jobs:
       - install-node
       - test
+        requires:
+            - install-node
